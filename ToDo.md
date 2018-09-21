@@ -1,6 +1,6 @@
 # ToDo:
-- Read from file
+- Read from file:+
 - Sort alphabetically
 - Percentage
 - Cyrillic symbols only
-- Reduction to the general register
+- Reduction to the general register:+
