@@ -7,5 +7,5 @@ string='Привет'
 #Reduction to the general register
 dic={}
 for x in string:
-    dic[x]=s.count(x)
+    dic[x]=string.count(x)
 print(dic)
