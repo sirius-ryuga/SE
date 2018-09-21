@@ -4,6 +4,7 @@
 #Percentage
 #Cyrillic symbols only
 #Reduction to the general register:+
+#Save result
 
 def sol():
     stringl=string.lower()	
