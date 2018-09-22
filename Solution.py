@@ -4,10 +4,10 @@ def coun(stringl,length):
     dic={}
     sordic={}
     for x in stringl:
-        dic[x]=stringl.count(x), str(round(stringl.count(x)/length*100,1))+" %"
+        dic[x]=stringl.count(x), str(round(stringl.count(x)/length*100,1))+"%"
     for key in sorted(dic):
         sordic[key]=dic[key]
-    print(sordic)
+    print(str(sordic).replace("'",""))
     print("Save result? (Y/N):")
     savemode=input()
     if savemode=="Y":
@@ -21,12 +21,14 @@ def sol():
     stringl=string.lower()	
     length=len(stringl)
     stringl=stringl.replace(" ","")
-    stringl = re.sub(u'[^а-я\s]*', u'', stringl)
+    stringl=stringl.replace("\n","")
+    stringl=stringl.replace("\t","")
+    stringl = re.sub(u'[^а-яё\s]*', u'', stringl)
     lengthcyr=len(stringl)
     if lengthcyr==0:
         print("File or string is empty or do not contain сyrillic symbols.")
     elif lengthcyr>10000:
-        print("Await. The program works.")
+        print("Await. The program work.")
         coun(stringl,length)
     else:
         coun(stringl,length)
