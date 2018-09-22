@@ -8,22 +8,24 @@ def coun(stringl,length):
     for key in sorted(dic):
         sordic[key]=dic[key]
     print(sordic)
-    print("Save result (Y/N):")
+    print("Save result? (Y/N):")
     savemode=input()
     if savemode=="Y":
         savename=input("Input file name: ")
         file = open(savename+'.txt', 'w')
         file.write(str(sordic))
         file.close()
+        print("Result save.")
     
 def sol():
     stringl=string.lower()	
     length=len(stringl)
     stringl=stringl.replace(" ","")
     stringl = re.sub(u'[^а-я\s]*', u'', stringl)
-    if length==0:
-        print("File or string is empty")
-    elif length>10000:
+    lengthcyr=len(stringl)
+    if lengthcyr==0:
+        print("File or string is empty or do not contain сyrillic symbols.")
+    elif lengthcyr>10000:
         print("Await. The program works.")
         coun(stringl,length)
     else:
@@ -50,4 +52,4 @@ elif mode=="1":
     string=(input("Input string: "))
     sol()
 else:
-    print("Wrong mode") 
+    print("Wrong mode.") 
