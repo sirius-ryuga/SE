@@ -5,5 +5,5 @@
 - Cyrillic symbols only:+
 - Reduction to the general register:+
 - Save result:+
-- A bug with the location of the letter *'¸'* is known and incurable for technical reasons.
-- Fix @1
+- A bug with the location of the letter *'Â¸'* is known and incurable for technical reasons.
+- Fix issue 1
