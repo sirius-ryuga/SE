@@ -1,7 +1,7 @@
 # ToDo:
 - Read from file:+
-- Sort alphabetically
-- Percentage
-- Cyrillic symbols only
+- Sort alphabetically:+
+- Percentage:+
+- Cyrillic symbols only:+
 - Reduction to the general register:+
-- Save result
+- Save result:+
