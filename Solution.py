@@ -1,4 +1,15 @@
 import re
+import chardet
+import sys
+
+def codecs():
+    with open(name+".txt", "rb") as file:
+        text = file.read()
+        enc = chardet.detect(text).get("encoding")
+        file.close()
+    if enc!="windows-1251" and enc!="MacCyrillic" and enc!="ISO-8859-8" and enc!="windows-1255":
+        print("Wrong encoding.")
+        sys.exit()
 
 def coun(stringl,length):
     dic={}
@@ -41,6 +52,7 @@ mode=input()
 if mode=="2":
     try:
         name=input("Input file name: ")
+        codecs()
         file = open(name+'.txt', 'r')
         string=file.read()
         file.close()
