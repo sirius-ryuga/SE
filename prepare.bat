@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe" -m venv "%CD%\Env" && %CD%\Env\Scripts\activate.bat && python -m pip install --upgrade pip && pip install chardet && @echo All components installed && @pause

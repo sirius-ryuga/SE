@@ -35,7 +35,7 @@ def sol():
     stringl=stringl.replace("\n","")
     stringl=stringl.replace("\t","")
     stringl=stringl.replace("\x0","")
-    stringl = re.sub(u'[^–∞-—è—ë\s]*', u'', stringl)
+    stringl = re.sub(u'[^‡-ˇ∏\s]*', u'', stringl)
     lengthcyr=len(stringl)
     if lengthcyr==0:
         print("File or string is empty or do not contain —Åyrillic symbols.")
