@@ -8,5 +8,5 @@
 - A bug with the location of the letter *'ё'* is known and incurable for technical reasons.
 - Fix issue 1:+
 - Tests: +
-- Add virtualenv.
-- Check the need for libraries.
+- Add virtualenv: +
+- Check the need for libraries: +
