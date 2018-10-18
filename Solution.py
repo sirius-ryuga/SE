@@ -34,11 +34,11 @@ def sol():
     stringl=stringl.replace(" ","")
     stringl=stringl.replace("\n","")
     stringl=stringl.replace("\t","")
-    stringl=stringl.replace("\x0","")
-    stringl = re.sub(u'[^à-ÿ¸\s]*', u'', stringl)
+    #stringl=stringl.replace("\x0","")
+    stringl = re.sub(u'[^Ð°-ÑÑ‘\s]*', u'', stringl)
     lengthcyr=len(stringl)
     if lengthcyr==0:
-        print("File or string is empty or do not contain Ñyrillic symbols.")
+        print("File or string is empty or do not contain cyrillic symbols.")
     elif lengthcyr>10000:
         print("Await. The program work.")
         coun(stringl,length)

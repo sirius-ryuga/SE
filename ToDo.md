@@ -10,3 +10,4 @@
 - Tests: +
 - Add virtualenv: +
 - Check the need for libraries: +
+- Modify Launcher 4 UNIX-like. 
