@@ -10,4 +10,5 @@
 - Tests: +
 - Add virtualenv: +
 - Check the need for libraries: +
-- Modify Launcher 4 UNIX-like. 
+- Modify Launcher 4 UNIX-like.
+- System shell files or os.system(command)?
