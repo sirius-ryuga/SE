@@ -107,3 +107,5 @@ venv.bak/
 *.lnk
 *.*~
 prepare.bat
+*.txt
+cytest.txt
