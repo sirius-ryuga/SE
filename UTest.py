@@ -18,7 +18,7 @@ class SolTest(unittest.TestCase):
     def test_lat_alph(self):
        self.assertEqual(sol(),lat_res)
 
-    def test_lat_alph(self):
+    def test_empty_array(self):
        self.assertEqual("",lat_res)
 
    
