@@ -1,2 +1,2 @@
-%CD%\Env\Scripts\python.exe %CD%\Solution.py
+cd %CD% && cricket-unittest
 @pause
