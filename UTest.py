@@ -11,6 +11,7 @@ lat_alp="qwertyuiopasdfghjklmnbvcxz"
 lat_res="ile or string is empty or do not contain cyrillic symbols."
 
 badfile="Wrong encoding."
+nofile="Error. File not exist."
 
  
 class SolTest(unittest.TestCase):
@@ -24,16 +25,16 @@ class SolTest(unittest.TestCase):
        self.assertEqual("",lat_res)
 
     def test_cyrillic_file(self):
-        self.assertEqual(sol("\testfiles\cytest"),cyr_res)
+        self.assertEqual(sol("cytest"),cyr_res)
         
     def test_lat_file(self):
-       self.assertEqual(sol("\testfiles\latest"),lat_res)
+       self.assertEqual(sol("latest"),lat_res)
 
     def test_cyrillic_file2(self):
-        assertIsNot(codecs("\testfiles\cytest"),badfile)
+        assertIsNot(codecs("cytest"),badfile)
         
     def test_lat_file2(self):
-       assertIsNot(codecs("\testfiles\latest"),badfile) 
+       assertIsNot(codecs("stupid"),nofile) 
 
    
 if __name__ == '__main__':
