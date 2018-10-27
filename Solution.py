@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 import chardet
 import sys
@@ -17,7 +19,7 @@ def coun(stringl,length):
     savemode=input()
     if savemode=="Y":
         savename=input("Input file name: ")
-        file = open(savename+'.txt', 'w')
+        file = open(savename, 'w')
         file.write(str(dic))
         file.close()
         print("Result save.")
@@ -38,7 +40,7 @@ def sol(string):
 def main():
     print("Choose a mode:")
     print("1-Manual input")
-    print("2-Read from file") #Only ANSI files.
+    print("2-Read from file")
     mode=input()
 
     if mode=="2":
