@@ -34,7 +34,7 @@ class SolTest(unittest.TestCase):
         assertIsNot(codecs("cytest"),badfile)
         
     def test_lat_file2(self):
-       assertIsNot(codecs("stupid"),nofile) 
+       assertIsNot(codecs("tytest"),nofile) 
 
    
 if __name__ == '__main__':
