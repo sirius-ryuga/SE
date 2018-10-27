@@ -10,18 +10,31 @@ cyr_res+="'ш': (1, '3.0%'), 'щ': (1, '3.0%'), 'ъ': (1, '3.0%'), 'ы': (1, '3.
 lat_alp="qwertyuiopasdfghjklmnbvcxz"
 lat_res="ile or string is empty or do not contain cyrillic symbols."
 
+badfile="Wrong encoding."
+
  
 class SolTest(unittest.TestCase):
     def test_cyrillic_alph(self):
         self.assertEqual(sol(cyr_alph),cyr_res)
         
     def test_lat_alph(self):
-       self.assertEqual(sol(),lat_res)
+       self.assertEqual(sol(lat_alp),lat_res)
 
-    def test_empty_array(self):
+    def test_empty_array():
        self.assertEqual("",lat_res)
+
+    def test_cyrillic_file(self):
+        self.assertEqual(sol("\testfiles\cytest"),cyr_res)
+        
+    def test_lat_file(self):
+       self.assertEqual(sol("\testfiles\latest"),lat_res)
+
+    def test_cyrillic_file2(self):
+        assertIsNot(codecs("\testfiles\cytest"),badfile)
+        
+    def test_lat_file2(self):
+       assertIsNot(codecs("\testfiles\latest"),badfile) 
 
    
 if __name__ == '__main__':
     unittest.main()
-
