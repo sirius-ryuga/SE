@@ -1,68 +1,41 @@
 # -*- coding: utf-8 -*-
 
-import re
-import chardet
-import sys
+import unittest
+import Solution
 
-def codecs(filename):
-    with open(filename, "rb") as file:
-        text = file.read()
-        return chardet.detect(text).get("encoding", "ascii")
+cyr_alph="абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+cyr_res="{'а': (1, '3.0%'), 'б': (1, '3.0%'), 'в': (1, '3.0%'), 'г': (1, '3.0%'), 'д': (1, '3.0%'), 'е': (1, '3.0%'), 'ж': (1, '3.0%'), 'з': (1, '3.0%'),"
+cyr_res+="'и': (1, '3.0%'), 'й': (1, '3.0%'), 'к': (1, '3.0%'), 'л': (1, '3.0%'), 'м': (1, '3.0%'), 'н': (1, '3.0%'), 'о': (1, '3.0%'), 'п': (1, '3.0%'),"
+cyr_res+="'р': (1, '3.0%'), 'с': (1, '3.0%'), 'т': (1, '3.0%'), 'у': (1, '3.0%'), 'ф': (1, '3.0%'), 'х': (1, '3.0%'), 'ц': (1, '3.0%'), 'ч': (1, '3.0%'),"
+cyr_res+="'ш': (1, '3.0%'), 'щ': (1, '3.0%'), 'ъ': (1, '3.0%'), 'ы': (1, '3.0%'), 'ь': (1, '3.0%'), 'э': (1, '3.0%'), 'ю': (1, '3.0%'), 'я': (1, '3.0%'), 'ё': (1, '3.0%')}"
 
-def coun(stringl,length):
-    dic={}
-    for x in stringl:
-        dic[x]=stringl.count(x), str(round(stringl.count(x)/length*100,1))+"%"
-    dic = {key: dic[key] for key in sorted(dic)}
-    print(str(dic).replace("'",""))
-    print("Save result? (Y/N):")
-    savemode=input()
-    if savemode=="Y":
-        savename=input("Input file name: ")
-        file = open(savename, 'w')
-        file.write(str(dic))
-        file.close()
-        print("Result save.")
-    return dic
+lat_alp="qwertyuiopasdfghjklmnbvcxz"
+lat_res="ile or string is empty or do not contain cyrillic symbols."
+
+nofile="Error. File not exist."
+
+ 
+class SolTest(unittest.TestCase):
     
-def sol(string):
-    stringl=string.lower()	
-    length=len(stringl)
-    stringl = re.sub(u'[^а-яё]*', u'', stringl)
-    lengthcyr=len(stringl)
-    if lengthcyr==0:
-        print("File or string is empty or do not contain cyrillic symbols.")
-    elif lengthcyr>10000:
-        print("Await. The program work.")
-        coun(stringl,length)
-    else:
-        coun(stringl,length)
-    return stringl
+    def test_cyrillic_alph(self):
+        self.assertEqual(sol(cyr_alph),cyr_res)
+        
+    def test_lat_alph(self):
+       self.assertEqual(sol(lat_alp),lat_res)
 
-def main():
-    print("Choose a mode:")
-    print("1-Manual input")
-    print("2-Read from file")
-    mode=input()
+    def test_empty_array():
+       self.assertEqual("",lat_res)
 
-    if mode=="2":
-        try:
-            name=input("Input file name: ")
-            encoding = codecs(name)
-            string = None
-            with open(name, 'r', encoding=encoding) as file:
-                string=file.read()
-            sol(string)
-        except FileNotFoundError:
-            print("Error. File not exist.")
-        except PermissionError:
-            print("Error. Problems with access to file.")
-            
-    elif mode=="1":
-        string=(input("Input string: "))
-        sol(string)
-    else:
-        print("Wrong mode.") 
+    def test_cyrillic_file(self):
+        self.assertEqual(sol("cytest"),cyr_res)
+        
+    def test_lat_file(self):
+       self.assertEqual(sol("latest"),lat_res)
 
+
+    def test_lat_nefile(self):
+       assertIsNot(codecs("tytest"),nofile) 
+
+   
 if __name__ == '__main__':
-    main()
+    unittest.main()
