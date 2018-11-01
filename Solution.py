@@ -23,6 +23,7 @@ def coun(stringl,length):
         file.write(str(dic))
         file.close()
         print("Result save.")
+    return dic
     
 def sol(string):
     stringl=string.lower()	
@@ -36,6 +37,7 @@ def sol(string):
         coun(stringl,length)
     else:
         coun(stringl,length)
+    return stringl
 
 def main():
     print("Choose a mode:")
@@ -58,7 +60,7 @@ def main():
             
     elif mode=="1":
         string=(input("Input string: "))
-        sol()
+        sol(string)
     else:
         print("Wrong mode.") 
 
